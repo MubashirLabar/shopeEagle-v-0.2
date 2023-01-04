@@ -1,0 +1,1154 @@
+@import "./Colors.scss";
+@import "./Props.scss";
+@import "./media.scss"; 
+@import "./uifonts.scss";
+ 
+.font{font-family: 'Mulish', sans-serif;}
+.fontr{font-family: 'Varela Round', sans-serif;}
+
+::-webkit-scrollbar {display: none !important;}
+.cGcvT{display:  none;}
+
+@mixin bgImage($radius: 50%) { 
+    height: 100%;
+    width: 100%;
+    border-radius: $radius;
+    background-color: #e2e2e2;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.wrapPadding{
+    padding: 0 4%;
+    @include media("<=1200px"){padding: 0 0%;}
+}
+
+#typewriter {
+    margin-bottom: 2px;
+}
+
+#mobile-break{
+    @include media("<=large"){display: none;}
+    @include media("<=desktop"){display: none;}
+}
+
+#shopper{
+    font-family: 'pumpkin';
+    // letter-spacing: 2px;
+    font-size: 33px;
+    margin-top: 10px;
+    color: $themeColor
+}
+
+#seller{
+    font-family: 'pumpkin';
+    // letter-spacing: 2px;
+    font-size: 33px;
+    margin-top: 10px;
+    color: $yellow
+}
+
+// Header 
+.header{
+    background: transparent;
+    width: 100%;
+    top: 0; 
+    left: 0;
+    right: 0;
+    height: auto;
+    z-index: 999;
+    padding: 15px 0px;
+    &.bg{
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, 0.10) 0 8px 6px -6px;
+        position: sticky;
+    }
+    @include media("<=large"){padding: 15px 28px;}
+    @include media("<=tablet"){
+        padding: 15px 25px;
+        height: 80px;
+    }
+    @include media(">=phone", "<=480px"){
+        padding: 0px 8px 0px 8px;
+        height: 66px;
+    }
+    .wrapPadding{
+        @include media(">=phone", "<=480px"){padding: 14px 0%;}
+    }
+    .lef{
+        flex: 1;
+        @include media(">=phone", "<=480px"){flex: 0.8;}
+        .logo{
+            &.top{
+                @include media("<=tablet"){margin-top: 3px;}
+                @include media(">=phone", "<=480px"){margin-top: 0px;}
+            }
+            .img{
+                height: 42px;
+                margin-right: 10px;
+                @include media(">=large"){margin-left: 100px;}
+                @include media(">=desktop"){margin-left: 100px;}
+                @include media(">=phone", "<=480px"){
+                    margin-right: 8px;
+                    height: 38px;
+                }
+            }
+            .tt{@include media(">=phone", "<=480px"){
+                font-size: 20px;
+            }}
+        }
+    }
+    .rig{
+        flex: 1;
+        justify-content: flex-end;
+        padding: 0 30px;
+        @include media("<=large"){padding: 0px;}
+        .btns{
+            border-radius: 30px;
+            background: #fff;
+            &.bg{background: #f8f8f8;}
+            @include media(">=large"){margin-right: 67px;}
+            @include media(">=desktop"){margin-right: 67px;}
+            .btn{
+                display: flex;
+                padding: 11px 18px;
+                border-radius: 30px;
+                width: 110px;
+                letter-spacing: 0.3px;
+                justify-content: center;
+                text-align: center;
+                color: rgba(0, 0, 0, 0.4);
+                @include media("<=phoneH"){width: 92px;}
+                @include media(">=phone", "<=480px"){
+                    padding: 8px 12px;
+                    font-size: 14px;
+                    width: 82px;
+                }
+                &.active{
+                    &.shop{
+                        background: $themeColor;
+                        color: #fff;
+                    }
+                }
+                &.active{
+                    &.sell{
+                        background: $yellow;
+                        color: #fff;
+                    }
+                }
+                @include media("<=tablet"){padding: 11px 20px;}
+                @include media(">=phone", "<=480px"){padding: 8px 16px;}
+                .txt{
+                    text-align: center;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &.ylw{
+        .rig{
+            .button{
+                background: $yellow;
+                border-color: $yellow;
+            }
+        }
+    }
+}
+ 
+// footer
+.footer-p{
+    .wrapper{
+        padding: 80px 0px;
+        @include media("<=large"){padding: 80px 30px;}
+        @include media("<=tablet"){
+            flex-direction: column;
+            padding: 40px 35px;
+            justify-content: center;
+            align-items: center;
+        }
+        @include media(">=phone", "<=480px"){padding: 28px 12px 10px 12px;}
+      .col{
+        flex: 2;
+        @include media(">=large"){margin-left: 100px;}
+         @include media(">=desktop"){margin-left: 100px;}
+        @include media("<=large"){flex: 1;}
+        @include media("<=tablet"){
+            margin-bottom: 45px;
+            align-items: center;
+            text-align: center;
+        }
+        &.four{
+            align-items: flex-end;
+            @include media(">=large"){margin-right: 80px;}
+            @include media(">=desktop"){margin-right: 100px;}
+            @include media(">=phone", "<=480px"){margin-bottom: 0px;}
+        }
+        &.two, &.three{
+            flex: 1;
+            max-width: 220px;}
+        &.two{
+            @include media("<=desktop"){max-width: 150px;}
+        }
+        .lbl{margin-bottom: 20px;}
+        .logo{
+            .img{
+                height: 42px;
+                margin-right: 12px;
+                @include media(">=phone", "<=480px"){height: 38px;}
+            }
+            .txt{
+                height: 42px;
+                margin-left: -25px;
+                @include media(">=phone", "<=480px"){height: 30px;}
+            }
+        }
+        .lin{
+            margin-bottom: 15px;
+            color: rgba(40, 40, 40, 0.6);
+        }
+        .social{
+            margin-top: 14px;
+          .item{
+            height: 32px;
+            width: 32px;
+            color: $themeColor;
+            justify-content: center;
+            background: #D6F7FF;
+            margin-right: 12px;
+            border-radius: 4px;
+            @include anim;
+            &:hover{
+                color: #fff;
+                background: $themeColor;
+            }
+          }
+        }
+        .form{
+            width: 300px;
+            max-width: 300px;
+            @include media(">=phone", "<=480px"){width: 100%;}
+            .item{
+                width: 100%;
+                margin-bottom: 10px;
+                align-items: start;
+                padding: 10px 0px;
+                background: #F7F7F7;
+                .icon{
+                    margin-left: 15px;
+                }
+                .iput{
+                    width: 100%;
+                    padding: 0px 12px;
+                    border-radius: 2px;
+                    font-weight: normal;
+                    &::placeholder{color: #bbb;}
+                    &.area{
+                        height: 100px;
+                        resize: none;
+                        border-radius: 10px;
+                    }
+                }
+            }
+            .button{
+                padding: 9px 20px;
+                width: 100%;
+                border-radius: 2px;
+                &:hover{opacity: 0.8;}
+            }
+        }
+      }
+    }
+    .cpy-rit{
+        color: rgba(40, 40, 40, 0.36);
+        margin-top: -100px;
+        margin-left: 100px;
+        @include media ("<=large"){margin-left: 140px;}
+        @include media ("<=tablet"){
+            margin-top: -32px;
+            text-align:  center;
+        }
+        @include media(">=phone", "<=480px"){
+            font-size: 12px;
+            margin-top: 0px;
+            margin-left: 0px;
+            padding: 14px 10px;
+            line-height: 1.3;
+        }
+    }
+    &.sell{
+        .social{
+            .item{
+                color: $yellow !important;
+                background: #FFF6D9 !important;
+                &:hover{
+                    color: #fff !important;
+                    background: $yellow !important
+                }
+            }
+        }
+        .form{
+            .button{
+                background: #F0BE1D;
+                border-color: #F0BE1D;
+            }
+        }
+    }
+} 
+
+//Home page
+.home-p{ 
+    overflow-x: hidden;
+    .banner{
+        display: block;
+        top: 0;
+        right: 0;
+        z-index: 0;
+        height: 100vh; 
+        @include media("<=tablet"){height: 85vh;}
+        @include media("<=phoneH"){height: 80vh;}
+        @include media(">=phone", "<=374px"){
+            height: 80vh;
+            margin-right: -70px;
+        } 
+        @include media(">=375px", "<=410px"){
+            height: 60vh;
+            margin-right: -50px;
+        } 
+        @include media(">=411px", "<=480px"){
+            height: 58vh;
+            margin-right: 0px;
+        }
+    }
+    .sect-a{
+        width: 100%;
+        min-height: 100vh;
+        padding-top: 50px;
+        @include media("<=tablet"){
+            flex-direction: column-reverse;
+            justify-content: center;
+            padding-top: 0px;
+            min-height: auto;
+        }
+        .rit{
+            z-index: 1;
+            margin-top: 40px;
+            @include media("<=tablet"){margin-top: 0px;}
+            .mob{
+                justify-content: center;
+                margin-right: 40px; 
+                @include media("<=tablet"){
+                    margin-right: 0px;
+                    margin: 120px 0px 70px 0px;
+                }
+                @include media("<=phoneH"){margin: 135px 0px 80px 0px;}
+                @include media(">=phone", "<=480px"){margin: 110px 0px 80px 0px;}
+                .img{
+                    width: 570px;
+                    @include media("<=desktop"){width: 500px;}
+                    @include media("<=tablet"){width: 470px;}
+                    @include media("<=phoneH"){width: 420px;}
+                    @include media(">=phone", "<=480px"){width: 340px;}
+                } 
+            }
+        }
+    }
+    .sect-a-lef {
+        flex: 1;
+        z-index: 1;
+        justify-content: center;
+        align-items: center;
+        @include media("<=large"){padding-right: 80px;}
+        @include media("<=desktop"){
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        @include media("<=tablet"){
+            width: 100%;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 0 30px;
+            opacity: 1!important;
+            transform: none!important;
+        }
+        @include media(">=phone", "<=480px"){padding: 0 22px;}
+        .meta{
+            width: 410px;
+            @include media("<=tablet"){width: 100%;}
+            @include media(">=phone", "<=phoneH"){
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+            .title{
+                margin-bottom: 16px;
+                @include media("<=desktop"){font-size: 30px;}
+                @include media(">=phone", "<=480px"){
+                    font-size: 26px;
+                    margin-bottom: 15px;
+                }
+            }
+            .txt{
+                line-height: 1.5;
+                color: #696969;
+                @include media("<=desktop"){font-size: 16px;}
+            }
+            .blk { margin: 10px 0px;}
+            .actions{
+                margin-top: 20px;
+                .lin{
+                    height: 43px;
+                    margin-right: 10px;
+                    @include media("<=desktop"){height: 38px;}
+                    &:last-child{margin-right: 0px;}
+                    .img{height: 100%;}
+                }
+            }
+        }
+    } 
+    .sect-b{
+        padding-top: 60px;
+        @include media(">=large"){margin-left: 100px;}
+        @include media(">=desktop"){margin-left: 100px;}
+        @include media("<=tablet"){flex-direction: column-reverse;}
+        @include media(">=phone", "<=480px"){padding-top: 40px;}
+        .lit{
+            flex: 1;
+            height: 700px;
+            @include media("<=large"){height: 605px;}
+            @include media("<=desktop"){height: 567px;}
+            @include media("<=tablet"){
+                height: auto;
+                max-height: inherit;
+            }
+            .img{
+                height: 600px;
+                @include media("<=large"){height: 580px;}
+                @include media("<=desktop"){
+                    height: 532px;
+                    margin-left: -51px;
+                }
+                @include media("<=tablet"){
+                    height: 530px;
+                    margin-right: 0px;
+                }
+                @include media(">=phone", "<=480px"){
+                    height: 380px;
+                    margin-left: 0px;
+                    padding: 15px;
+                    margin-right: 32px;
+                }
+            }
+        }
+        .rit{
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+            @include media("<=large"){margin-top: 6px;}
+            @include media("<=desktop"){
+                padding-left: 21px;
+                margin-top: 80px;
+            }
+            @include media("<=tablet"){
+                padding: 20px 30px 20px 30px;
+                margin-top: 50px;
+            }
+            @include media(">=phone", "<=480px"){margin-top: 30px;}
+            .meta{
+                width: 400px;
+                @include media(">=large"){padding-bottom: 100px;}
+                @include media(">=desktop"){padding-bottom: 100px;}
+                @include media("<=desktop"){width: 100%;}
+                @include media(">=phone", "<=phoneH"){
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .title{
+                    margin-bottom: 25px;
+                    @include media("<=desktop"){font-size: 30px;}
+                    @include media(">=phone", "<=480px"){font-size: 26px;}
+                }
+                .txt{
+                    line-height: 1.5;
+                    @include media("<=desktop"){font-size: 16px;}
+                }
+            }
+        }
+    } 
+    .sect-c{
+        min-height: 100vh;
+        padding: 50px 0px 0px 0px;
+        @include media(">=phone", "<=480px"){padding: 60px 0px 0px 0px;}
+        .title{
+            margin-bottom: 80px;
+            @include media("<=desktop"){font-size: 36px;}
+            @include media(">=phone", "<=480px"){font-size: 26px;}
+        }
+        .wrap{
+            flex-wrap: wrap;
+            justify-content: center;
+            @include media(">tablet", "<=980px"){justify-content: center;}
+            .blk{
+                .item{ 
+                    max-width: 260px; 
+                    min-width: 260px;
+                    height: 350px;
+                    @include media("<=phoneH"){
+                        max-width: 220px;
+                        min-width: 220px;
+                    }
+                    @include media(">=phone", "<=480px"){
+                        max-width: 130px;
+                        min-width: 130px;
+                        height: 310px;
+                    }
+                    &.emt{
+                        min-width: 420px;
+                        max-width: 420px;
+                        @include media(">=phone", "<=480px"){
+                            min-width: 200px;
+                            max-width: 200px;
+                        }
+                    }
+                    .data{
+                        .img{
+                            height: 120px;
+                            margin-bottom: 20px;
+                            @include media(">=phone", "<=480px"){height: 80px;}
+                        }
+                        .meta{
+                            align-items: center;
+                            text-align: start;
+                            .lbl{
+                                margin-bottom: 10px;
+                                @include media(">=phone", "<=480px"){font-size: 18px;}
+                            }
+                            .txt{
+                                line-height: 1.3;
+                                text-align: center;
+                                @include media(">=phone", "<=480px"){font-size: 14px;}
+                            }
+                        }
+                    }
+                }
+                &.first{
+                    .right-line{
+                        margin-bottom: 140px;
+                        margin-left: 5px;
+                        @include media(">=phone", "<=480px"){
+                            margin-left: 0;
+                            width: 82px;
+                            margin-bottom: 180px;
+                        }
+                    } 
+                    .item{
+                        &:last-child{justify-content: flex-end;}
+                    }
+                }
+                &.second{
+                    .right-line{
+                        margin-bottom: 90px;
+                        margin-left: 5px;
+                        @include media(">=phone", "<=480px"){
+                            margin-left: 0;
+                            width: 82px;
+                            margin-bottom: 190px;
+                        }
+                    }
+                    .item{
+                        &:last-child{justify-content: flex-end;}
+                    }
+                }
+            }
+            .left-line{
+                margin-right: 50px;
+                margin-top: -10px;
+                @include media(">=phone", "<=480px"){
+                    margin-right: 63px;
+                    margin-top: -22px;
+                    height: 65px;
+                }
+                &.last{margin-right: 80px;}
+            }
+            .rit-top{
+                right: -150px;
+                top: 160px;
+                height: 40px;
+                @include media(">=phone", "<=480px"){height: 30px;}
+            }
+            .rit-btm{
+                right: 0px;
+                bottom: 220px;
+                height: 55px;
+                @include media("<=tablet"){
+                    bottom: 250px;
+                    right: 110px;
+                }
+                @include media(">=phone", "<=480px"){
+                    height: 33px;
+                }
+            }
+            .dot{
+                right: 10px;
+                top: 380px;
+                height: 15px;
+            }
+            .btm{
+                right: 150px;
+                top: 450px;
+                height: 25px;
+            }
+            .btm-left{
+                left: 800px;
+                bottom: 700px;
+                height: 35px;
+                @include media("<=tablet"){
+                    left: 600px;
+                }
+                @include media(">=phone", "<=480px"){
+                    left: 240px;
+                    bottom: 100px;
+                }
+            }
+            .circle{
+                bottom: 420px;
+                left: 80px;
+                height: 25px;
+            }
+            .left-btm{
+                bottom: 520px;
+                height: 25px;
+                left: -120px;
+                @include media("<=tablet"){    
+                    bottom: 360px;  
+                    left: 0px;
+                }
+            }
+            .left-top{
+                top: 30px;
+                left: -160px;
+                height: 55px;
+                @include media("<=tablet"){
+                    top: -86px;
+                    left: -30px;
+                    height: 50px;
+                }
+                @include media(">=phone", "<=480px"){
+                    top: -70px;
+                    left: inherit;
+                    height: 36px;
+                    right: 10px;
+                }
+            }
+        }
+    } 
+    .sect-d{
+        min-height: 100vh;
+        padding: 100px 30px;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        width: 100%;
+        @include media("<=large"){padding: 100px 15px;}
+        @include media("<=desktop"){
+            padding: 100px 15px 70px 15px;
+            background-position: bottom !important;
+        }
+        @include media(">=phone", "<=480px"){
+            background-position: 54% 0% !important;
+            padding: 80px 60px 70px 60px;
+        }
+        .title{
+            width: 100%;
+            text-align: center;
+            color: #177288;
+            margin-bottom: 60px;
+            @include media(">=phone", "<=480px"){font-size: 26px;}
+            &.y{color: #F0BE1D;}
+        }
+        .wrapper{
+            width: 100%;
+            padding: 0 8.5%;
+            @include media("<=desktop"){flex-direction: column;}
+            .lef{
+                flex: 1;
+                align-items:  flex-start;
+                justify-content: center;
+                margin-right: 60px;
+                @include media("<=desktop"){
+                    margin-bottom: 70px;
+                    width: 100%;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .img{
+                    height: 400px;
+                    @include media("<=large"){height: 360px;}
+                    @include media("<=desktop"){height: 400px;}
+                    @include media(">=phone", "<=480px"){height: 260px;}
+                }
+            }
+            .rit{
+                flex: 1.3;
+                max-width: 700px;
+                @include media(">=phone", "<=480px"){width: 100%;}
+                .wrap{
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-column-gap: 30px;
+                    grid-row-gap: 40px;
+                    width: 100%;
+                    justify-items: center;
+                    @include media("<=large"){
+                        grid-column-gap: 22px;
+                        grid-row-gap: 37px;
+                    }
+                    @include media(">tablet", "<=980px"){width: 780px;}
+                    @include media(">=phone", "<=480px"){
+                        grid-template-columns: repeat(1, 1fr);
+                        grid-column-gap: 11px;
+                        grid-row-gap: 38px;
+                        width: 100%;
+                    }
+                    .item{
+                        max-width: 100%;
+                        min-width: 100%;
+                        min-height: 140px;
+                        max-height: 140px;
+                        border-radius: 8px;
+                        background: #FFFFFF;
+                        cursor: pointer;
+                        &:hover{
+                            svg{path{fill: $red;}}
+                        }
+                        .icon{
+                            width: 100%;
+                            justify-content: center;
+                            svg{
+                                position: absolute;
+                                top: -19px;
+                                height: 35px;
+                                path{@include anim(0.2s);}
+                                &:hover{
+                                    path{fill: $red;}
+                                }
+                            }
+                        }
+                        .meta{
+                            flex: 1;
+                            padding: 31px 50px;
+                            text-align: center;
+                            justify-content: center;
+                            @include media("<=large"){padding: 31px 30px;}
+                            .lbl{margin-bottom: 8px;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sect-e{
+        justify-content: center;
+        padding: 60px 0px;
+        background: $themeColor;
+        .title{
+            letter-spacing: 0.3px;
+            margin-bottom: 16px;
+            @include media("<=desktop"){font-size: 40px;}
+            @include media(">=phone", "<=480px"){font-size: 26px;}
+        }
+        .txt{
+            letter-spacing: 0.3px;
+            text-align: center;
+            width: 300px;
+            margin-bottom: 50px;
+            color: rgba(255, 255, 255, 0.8);
+            @include media("<=desktop"){font-size: 28px;}
+            @include media(">=phone", "<=480px"){
+                font-size: 20px;
+                line-height: 1.5;
+            }
+        }
+        .actions{
+            margin-top: 15px;
+            .lin{
+                height: 45px;
+                margin-right: 30px;            
+                &:last-child{margin-right: 0px;}
+                @include media("<=desktop"){height: 48px;}
+                @include media("<=tablet"){height: 44px;}
+                @include media(">=phone", "<=480px"){
+                    height: 36px;
+                    margin-right: 20px;
+                }
+                .img{height: 100%;}
+            }
+        }
+        .ftr{
+            height: 107px;
+            position: sticky;
+            bottom: 0;
+            margin-top: 50px;
+            @include media("<=desktop"){height: 75px;}
+            @include media(">=phone", "<=480px"){height: 46px;}
+        }
+    }
+}
+
+// Second home page
+.home-sell{
+    .sect-a{
+        .rit{
+            .mob{
+                @include media("<=phoneH"){margin: 135px 0px 60px 0px;}
+                @include media(">=phone", "<=480px"){margin: 135px 0px 102px 0px;}
+            }
+            .img{
+            width: 650px !important;
+            margin-right: -65px;
+            @include media("<=large"){
+                width: 630px !important;
+                margin-right: 0px;
+            }
+            @include media("<=desktop"){width: 580px !important;}
+            @include media("<=phoneH"){width: 550px !important;}
+            @include media(">=phone", "<=480px"){width: 355px !important;}
+        }}
+    }
+    .sect-a-lef{
+        @include media("<=large"){padding-right: 40px;}
+        @include media("<=desktop"){
+            padding-right: 0px; 
+            margin-left: 20px;
+        }
+        @include media("<=tablet"){
+            padding-right: auto;
+            margin-left: 0px;
+            margin-top: 30px;
+        }
+        @include media("<=phoneH"){
+            padding-left: auto;
+            padding: 0 22px;
+            margin-top: 0px;
+        }
+        .title{
+            @include media("<=tablet"){font-size: 22px;}
+            @include media("<=phoneH"){font-size: 26px;}
+            @include media("<=480px"){font-size: 24px;}
+        }
+        .txt{
+            @include media("<=tablet"){font-size: 15px;}
+            @include media("<=phoneH"){font-size: 16px;}
+            @include media("<=480px"){font-size: 15px;}
+        }
+    }
+    .sect-b{
+        padding: 100px 60px 0px 60px;
+        @include media("<=desktop"){padding: 120px 0px 80px 80px;}
+        @include media("<=tablet"){padding: 100px 0px 60px 0px;}
+        @include media(">=phone", "<=480px"){padding: 80px 0px 40px 0px;}
+        .lit{
+            .img{
+                height: 650px;
+                @include media("<=desktop"){height: 600px;}
+                @include media("<=phoneH"){height: 500px;}
+                @include media(">=phone", "<=480px"){
+                    height: 375px;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                }
+            }
+        }
+        .rit{
+            margin-top: 0px;
+            margin-bottom: 140px;
+            @include media("<=tablet"){
+                margin-bottom: 0px;
+                padding: 0px 30px 60px 30px;
+            }
+        }
+    }
+    .sect-c{
+        .wrap{
+            .circle{
+                @include media(">=phone", "<=480px"){left: 150px;}
+            }
+        }
+        .item{
+            @include media(">=phone", "<=480px"){
+                text-align: center;
+                max-width: 132px;
+                min-width: 135px;
+            }
+            .meta{
+                .lbl{@include media(">=phone", "<=480px"){text-align: center;}}
+            }
+        }
+    }
+    .sect-e{background: $yellow;}
+    .sect-d{
+        .rit{
+            .item{
+                svg{path{fill: $yellow}}
+            }
+        }
+    }
+}  
+ 
+// Privacy Policy
+.privacy-policy{
+    min-height: 60vh;
+    .m20{margin-bottom: 20px;}
+    .hdr{
+        @include bgImage(0px);
+        background-position-y: -80px!important;
+        height: 300px;
+        align-items: flex-start;
+        @include media("<=desktop"){
+            background-position-y: -30px !important;
+            height: 260px;
+        }
+        @include media("<=980px"){height: 250px;}
+        @include media(">=phone", "<=480px"){
+            height: 150px;
+            background-position-y: 0px !important;
+        }
+        .logo{     
+            min-height: 70px;
+            background: rgb(214, 247, 255);
+            @include media("<=tablet"){
+                position: absolute;
+                width: 120px;
+            }
+            @include media(">=phone", "<=480px"){
+                width: 80px;
+                height: 40px;
+                margin-top: -3px;
+            }
+            .img{
+                height: 42px;
+                margin-right: 10px;
+                @include media("<=desktop"){margin-left: 30px;}
+                @include media(">=phone", "<=480px"){
+                    height: 38px;
+                    margin-left: 16px;
+                    margin-right: 8px;
+                }
+            }
+            .tt{@include media(">=phone", "<=480px"){
+                font-size: 20px;
+            }}
+        } 
+        .wrap{
+            height: 100%;
+            justify-content: center;
+            text-align: center;
+            width: 100%; 
+            .title{
+                color: #3C9FB7;
+                margin-bottom: 70px;
+                @include media(">=desktop"){margin-right: 150px;}
+                @include media(">=phoneH"){margin-right: 150px;}
+                @include media(">=phone", "<=480px"){
+                    font-size: 26px;
+                    margin-bottom: -5px;
+                }
+            }
+        }
+    }
+    .actions{
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 16px;
+        margin-bottom: 35px;
+        .lef{
+            flex: 1;
+            .btn{
+                text-decoration: underline;
+                &:hover{color: $themeColor;}
+            }
+        }
+    } 
+    .content{
+        padding: 30px 0px;
+        line-height: 1.5;
+        margin: 0 auto; 
+        width: 1100px;
+        @include media("<=desktop"){
+            width: 100%;
+            padding: 0 30px;
+        }
+        @include media(">=phone", "<=480px"){padding: 20px 20px;}
+        .item{
+            .lbl{
+                margin-top: 22px;
+                margin-bottom: 15px;
+            }
+            .txt{line-height: 1.5;}
+        } 
+        .heading{
+            padding: 20px 0; 
+            margin-bottom: 5px;
+            .lin{
+                line-height: 2.2;
+                width: fit-content;
+                .noul{text-decoration: underline;}
+                &:hover{color: $themeColor;}
+            }
+        }
+        .marg-btm{margin-bottom: 20px;}
+    } 
+    &.policy{
+        .btm {
+            left: 750px !important;
+            bottom: 80px !important;
+        }
+        .circle {
+            left: 480px !important;
+            top: 169px !important;
+        }
+        .rit-btm {
+            left: 525px !important;
+            top: 25px !important;
+        }
+        .btm-left {
+            top: 110px !important;
+        }        
+    }
+}
+
+/* Bottom nav Download */
+.btm-download{
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    background: #21C2E9;
+    padding: 12px 0;
+    width: 100%;
+    justify-content: center;
+    z-index: 998;
+    display: none;
+    &.ylw{background: #ffd241;}
+    @include media(">=phone", "<=480px"){display: flex;}
+    .lit{.txt{margin-bottom: 5px;}}
+    .rit{
+        .lin{
+            margin-right: 10px;
+            &:last-child{margin-right: 0px;}
+            .img{height: 31px;} 
+        }
+    }
+}
+
+/* side nav */
+.side-nav{
+    right: 15px;
+    bottom: 90px;
+    z-index: 995;
+    @include media(">=319px", "<=480px"){right: 6px;}
+    &.hide{
+        opacity: 0 !important; 
+        visibility: hidden !important;
+    }
+    &.white-l{
+        .btn{
+            background: #fff;
+            color: $themeColor;
+            @include media("<desktop"){
+                background: $themeColor;
+                color: #fff;
+            }
+            .logo-w{.logo-color{
+                fill: $themeColor;
+                @include media("<desktop"){fill: #fff;}
+            }}
+            .arrow-up{
+                fill: $themeColor;
+                @include media("<desktop"){fill: #fff;}
+            }
+        }
+    }
+    &.white{
+        .btn{
+            @include media(">=phone", "<=480px"){
+                background: #fff;
+                color: $themeColor;
+                .logo-w{.logo-color{fill: $themeColor;}}
+                .arrow-up{fill: $themeColor;}
+            }
+        }
+    }
+    &.ylw{
+        .btn{background: $yellow;}
+        &.white-l{
+            .btn{
+                background: #fff;
+                color: $yellow;
+                @include media("<desktop"){
+                    background: $yellow;
+                    color: #fff;
+                }
+                .logo-w{.logo-color{
+                    fill: $yellow;
+                    @include media("<=desktop"){fill: #fff;}
+                }}
+                .arrow-up{
+                    fill: $yellow;
+                    @include media("<=desktop"){fill: #fff;}
+                }
+            }
+        } 
+        &.white{
+            .btn{
+                @include media(">=phone", "<=480px"){
+                    background: #fff;
+                    color: $yellow;
+                    .logo-w{.logo-color{fill: $yellow;}}
+                    .arrow-up{fill: $yellow;}
+                }
+            }
+        } 
+    }
+    .btn{
+        height: 52px;
+        width: 53px;
+        border-radius: 50%;
+        background: $themeColor;
+        justify-content: center;
+        margin-bottom: 8px;
+        @include anim(0.4s);
+        .logo-w{
+            height: 32px;
+            @include anim(0.4s);
+        }
+        .arrow-up{@include anim(0.4s)}
+    }
+    .logo{
+        .socials{
+            bottom: 120px;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.5s;
+            right: -60px;
+            &.show{
+                opacity: 1;
+                visibility: visible;
+                right: 0px;
+            }
+            &.hide{
+                opacity: 0;
+                visibility: hidden;
+                right: -60px;
+            }
+        }
+        &:hover{
+            .socials{
+                opacity: 1;
+                visibility: visible;
+                right: 0px;
+            }
+        }
+    }
+}
